@@ -1,0 +1,50 @@
+﻿@using PagedList.Mvc
+@model  PagedList.IPagedList<UsingPagedList.Models.Fornecedor>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table class="table table-hover table-responsive table-bordered" id="tabelaFornecedores">
+   
+    <thead>
+    <th></th>
+    <th>Nome</th>
+    <th>CNPJ</th>
+    <th>Email</th>
+    <th></th>
+    </thead>
+    @foreach (var modelo in Model)
+    {
+        <tbody>
+            <tr>
+                <td class="text-center">
+                    <a href="~/Fornecedor/Editar?id=@modelo.Id">
+                        <div class="glyphicon glyphicon-edit"></div>
+                    </a>
+                </td>
+                <td>@modelo.Nome</td>
+                <td>@modelo.CNPJ</td>
+                <td>@modelo.Email</td>
+                <td class="text-center">
+                    <a href="#">
+                        <div class="glyphicon glyphicon-remove" onclick="remover(@modelo.Id)"></div>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    }
+</table>
+<input type="button" class="btn btn-primary" value="Novo Cadastro" onclick="location.href='@Url.Action("Adicionar", "Fornecedor")'" />
+
+<div class="row text-right" >
+    <div class="col-md-12">
+        Página Atual @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        de @Model.PageCount
+        @Html.PagedListPager(Model, pagina => Url.Action("Index",
+         new { pagina}))
+
+    </div>
+</div>
+
+<script src="~/Scripts/Site/Site.js"></script>

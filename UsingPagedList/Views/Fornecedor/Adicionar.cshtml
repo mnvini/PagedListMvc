@@ -1,0 +1,21 @@
+﻿@model UsingPagedList.Models.Fornecedor
+@{
+    ViewBag.Title = "Adicionar";
+}
+
+<h2>Adicionar</h2>
+
+@using (Html.BeginForm("Adicionar", "Fornecedor", FormMethod.Post))
+{
+    <div class="form-group">
+        <label > Nome: </label>
+        @Html.TextBoxFor(f => f.Nome, new { @class = "form-control" })
+        <label> CNPJ: </label>
+        @Html.TextBoxFor(f => f.CNPJ, new { @class = "form-control" })
+        <label>E-mail:</label>
+        @Html.TextBoxFor(f => f.Email, new { @class = "form-control" })
+
+        <input type="submit" value="Adicionar" class="btn btn-primary" />
+
+    </div>
+}
