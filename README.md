@@ -20,7 +20,9 @@ like that
         }
         
 And you have to put on the view IPagedList 
+
        PagedList.IPagedList<MyModel> 
+       
 passing your model
 
 then you use this helper to create the pagination 
