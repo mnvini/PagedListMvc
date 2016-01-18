@@ -5,7 +5,7 @@ this project was create to show how simple is make a pagination using Paged List
 
 you have to download the reference paged list mvc on NuGet
 
-after you create two variables in the Controller to define items per page and pagesNumber
+after you create two variables in the Controller to define items per page and number of pages
 
 like that
 
