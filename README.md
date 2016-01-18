@@ -25,7 +25,7 @@ And you have to put on the view IPagedList
        
 passing your model
 
-then you use this helper to create the pagination 
+then you use this helper to create the pagination on index 
 
         @Html.PagedListPager(Model, page => Url.Action("Index",
          new { page}))
